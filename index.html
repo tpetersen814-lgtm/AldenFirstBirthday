@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It Is Your Birthday - First Birthday Party</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=American+Typewriter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #e8dcc4;
+            --brown: #7d5a3b;
+            --dark-brown: #4a3728;
+            --blue: #4a7c9e;
+            --paper-white: #f9f6f0;
+            --gray: #5a5a5a;
+        }
+
+        body {
+            font-family: 'Courier Prime', monospace;
+            background: linear-gradient(135deg, #d4c5a9 0%, #8b7355 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--dark-brown);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section - Invitation */
+        .invitation-card {
+            background: var(--paper-white);
+            border: 3px solid var(--dark-brown);
+            box-shadow: 
+                12px 12px 0 rgba(0, 0, 0, 0.1),
+                20px 20px 40px rgba(0, 0, 0, 0.2);
+            padding: 60px 40px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--brown) 0px,
+                var(--brown) 40px,
+                var(--blue) 40px,
+                var(--blue) 80px,
+                var(--beige) 80px,
+                var(--beige) 120px,
+                var(--gray) 120px,
+                var(--gray) 160px
+            );
+        }
+
+        .office-logo {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        .office-logo h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-brown);
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .office-logo .subtitle {
+            font-size: 1rem;
+            color: var(--brown);
+            letter-spacing: 3px;
+        }
+
+        .banner {
+            background: var(--beige);
+            border: 2px solid var(--brown);
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .banner h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dark-brown);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .banner .period {
+            font-size: 3rem;
+        }
+
+        .party-details {
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 2;
+            margin: 40px 0;
+        }
+
+        .party-details strong {
+            color: var(--brown);
+            font-weight: 700;
+        }
+
+        .party-details .baby-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin: 20px 0;
+            display: block;
+        }
+
+        .quote-box {
+            background: white;
+            border-left: 6px solid var(--blue);
+            padding: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--gray);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-box::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--blue);
+            line-height: 0;
+            margin-right: 10px;
+        }
+
+        .quote-box .author {
+            text-align: right;
+            margin-top: 15px;
+            font-style: normal;
+            color: var(--brown);
+        }
+
+        /* RSVP Section */
+        .rsvp-section {
+            background: white;
+            border: 3px solid var(--dark-brown);
+            padding: 50px 40px;
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            animation: slideIn 0.8s ease-out 0.2s both;
+        }
+
+        .rsvp-section h2 {
+            font-size: 2.5rem;
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .rsvp-section .subtitle {
+            text-align: center;
+            color: var(--brown);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark-brown);
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--brown);
+            background: var(--paper-white);
+            font-family: 'Courier Prime', monospace;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(74, 124, 158, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .radio-option input[type="radio"] {
+            width: auto;
+            cursor: pointer;
+            transform: scale(1.3);
+        }
+
+        .submit-btn {
+            background: var(--brown);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: 'Courier Prime', monospace;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 var(--dark-brown);
+            position: relative;
+        }
+
+        .submit-btn:hover {
+            background: var(--blue);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--dark-brown);
+        }
+
+        .submit-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 var(--dark-brown);
+        }
+
+        /* Guest List */
+        .guest-list {
+            background: white;
+            border: 3px solid var(--dark-brown);
+            padding: 40px;
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.8s ease-out 0.4s both;
+        }
+
+        .guest-list h2 {
+            font-size: 2rem;
+            color: var(--dark-brown);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .guest-item {
+            background: var(--paper-white);
+            border: 2px solid var(--beige);
+            padding: 20px;
+            margin-bottom: 15px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 15px;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .guest-item:hover {
+            transform: translateX(5px);
+            border-color: var(--brown);
+        }
+
+        .guest-info h3 {
+            color: var(--dark-brown);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .guest-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .status-badge {
+            padding: 10px 20px;
+            border-radius: 3px;
+            font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .status-yes {
+            background: #90EE90;
+            color: #2d5016;
+            border: 2px solid #2d5016;
+        }
+
+        .status-no {
+            background: #ffcccb;
+            color: #8b0000;
+            border: 2px solid #8b0000;
+        }
+
+        .status-maybe {
+            background: #ffffcc;
+            color: #8b7300;
+            border: 2px solid #8b7300;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: var(--gray);
+            padding: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Dundie Award Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--dark-brown);
+            font-size: 0.95rem;
+        }
+
+        .dundie {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 3rem;
+            animation: spin 3s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0%, 90%, 100% { transform: rotate(0deg); }
+            95% { transform: rotate(360deg); }
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #90EE90;
+            border: 3px solid #2d5016;
+            color: #2d5016;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: none;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .invitation-card {
+                padding: 40px 20px;
+            }
+
+            .office-logo h1 {
+                font-size: 2rem;
+            }
+
+            .banner h2 {
+                font-size: 2rem;
+            }
+
+            .party-details {
+                font-size: 1.1rem;
+            }
+
+            .party-details .baby-name {
+                font-size: 1.8rem;
+            }
+
+            .guest-item {
+                grid-template-columns: 1fr;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Invitation Card -->
+        <div class="invitation-card">
+            <div class="office-logo">
+                <h1>DUNDER MIFFLIN</h1>
+                <div class="subtitle">PAPER COMPANY</div>
+            </div>
+
+            <div class="banner">
+                <h2>IT IS YOUR BIRTHDAY<span class="period">.</span></h2>
+            </div>
+
+            <div class="party-details">
+                <span class="baby-name">[BABY'S NAME]</span>
+                is turning <strong>ONE</strong>!
+                <br><br>
+                📅 <strong>Date:</strong> [Date]
+                <br>
+                🕐 <strong>Time:</strong> [Time]
+                <br>
+                📍 <strong>Location:</strong> [Your Address]
+                <br><br>
+                Join us for a day at the Scranton Branch!
+            </div>
+
+            <div class="quote-box">
+                I am Beyoncé, always.
+                <div class="author">— Michael Scott (and your baby)</div>
+            </div>
+
+            <div class="party-details">
+                <strong>Theme:</strong> The Office
+                <br>
+                Expect: Pretzels, Dundies, and baby chaos
+                <br>
+                Dress code: Business casual (or whatever, we don't care)
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            🎉 That's what she said! Your RSVP has been recorded.
+        </div>
+
+        <!-- RSVP Form -->
+        <div class="rsvp-section">
+            <h2>📋 RSVP</h2>
+            <div class="subtitle">Please confirm your attendance by [RSVP Date]</div>
+            
+            <div class="form-group">
+                <label for="guestName">Name *</label>
+                <input type="text" id="guestName" placeholder="Michael Scott" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" placeholder="michael@dundermifflin.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Number of Guests (including yourself) *</label>
+                <select id="guests" required>
+                    <option value="">Select...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Will you attend? *</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="attendance" value="yes" required>
+                        <span>Yes! (I'll be there!)</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="attendance" value="no">
+                        <span>No (Toby's response)</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="attendance" value="maybe">
+                        <span>Maybe (Pulling a Jim)</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dietary">Dietary Restrictions / Allergies</label>
+                <textarea id="dietary" placeholder="Kevin's famous chili is gluten-free, right?"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message for the Birthday Baby (optional)</label>
+                <textarea id="message" placeholder="Congratulations on your one year! - Dwight"></textarea>
+            </div>
+
+            <button class="submit-btn" onclick="submitRSVP()">SUBMIT RSVP</button>
+        </div>
+
+        <!-- Guest List -->
+        <div class="guest-list">
+            <h2>📊 Guest List</h2>
+            <div id="guestListContainer">
+                <div class="empty-message">No RSVPs yet. Be the first to respond!</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Questions? Contact [Your Name] at [Your Email]</p>
+            <div class="dundie">🏆</div>
+            <p>© Dunder Mifflin Scranton Branch</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize storage key
+        const STORAGE_KEY = 'office-party-rsvps';
+
+        // Load and display RSVPs on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            displayRSVPs();
+        });
+
+        // Submit RSVP function
+        async function submitRSVP() {
+            const name = document.getElementById('guestName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const guests = document.getElementById('guests').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
+            const dietary = document.getElementById('dietary').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Validation
+            if (!name || !email || !guests || !attendance) {
+                alert('Please fill in all required fields!');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address!');
+                return;
+            }
+
+            // Create RSVP object
+            const rsvp = {
+                id: Date.now(),
+                name,
+                email,
+                guests,
+                attendance,
+                dietary,
+                message,
+                timestamp: new Date().toISOString()
+            };
+
+            // Save to storage
+            try {
+                let existingData;
+                let rsvps = [];
+                
+                try {
+                    existingData = await window.storage.get(STORAGE_KEY, true);
+                    if (existingData && existingData.value) {
+                        rsvps = JSON.parse(existingData.value);
+                    }
+                } catch (err) {
+                    // Key doesn't exist yet - this is fine, we'll create it
+                    console.log('Creating new RSVP storage');
+                }
+                
+                // Check for duplicate email
+                const duplicateIndex = rsvps.findIndex(r => r.email.toLowerCase() === email.toLowerCase());
+                if (duplicateIndex !== -1) {
+                    // Update existing RSVP
+                    rsvps[duplicateIndex] = rsvp;
+                } else {
+                    // Add new RSVP
+                    rsvps.push(rsvp);
+                }
+                
+                await window.storage.set(STORAGE_KEY, JSON.stringify(rsvps), true);
+                
+                // Show success message
+                const successMsg = document.getElementById('successMessage');
+                successMsg.classList.add('show');
+                setTimeout(() => {
+                    successMsg.classList.remove('show');
+                }, 5000);
+
+                // Clear form
+                document.getElementById('guestName').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('guests').value = '';
+                document.querySelectorAll('input[name="attendance"]').forEach(r => r.checked = false);
+                document.getElementById('dietary').value = '';
+                document.getElementById('message').value = '';
+
+                // Refresh display
+                displayRSVPs();
+
+            } catch (error) {
+                console.error('Error saving RSVP:', error);
+                alert('There was an error saving your RSVP. Please try again!');
+            }
+        }
+
+        // Display RSVPs function
+        async function displayRSVPs() {
+            const container = document.getElementById('guestListContainer');
+            
+            try {
+                let data;
+                try {
+                    data = await window.storage.get(STORAGE_KEY, true);
+                } catch (err) {
+                    // Key doesn't exist yet - this is expected on first load
+                    console.log('No RSVPs stored yet');
+                    container.innerHTML = '<div class="empty-message">No RSVPs yet. Be the first to respond!</div>';
+                    return;
+                }
+                
+                if (!data || !data.value) {
+                    container.innerHTML = '<div class="empty-message">No RSVPs yet. Be the first to respond!</div>';
+                    return;
+                }
+
+                const rsvps = JSON.parse(data.value);
+                
+                if (rsvps.length === 0) {
+                    container.innerHTML = '<div class="empty-message">No RSVPs yet. Be the first to respond!</div>';
+                    return;
+                }
+
+                // Sort by timestamp (newest first)
+                rsvps.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+                // Create HTML for each RSVP
+                const html = rsvps.map(rsvp => {
+                    const statusClass = rsvp.attendance === 'yes' ? 'status-yes' : 
+                                       rsvp.attendance === 'no' ? 'status-no' : 'status-maybe';
+                    const statusText = rsvp.attendance === 'yes' ? '✓ Attending' : 
+                                      rsvp.attendance === 'no' ? '✗ Not Attending' : '? Maybe';
+                    
+                    return `
+                        <div class="guest-item">
+                            <div class="guest-info">
+                                <h3>${escapeHtml(rsvp.name)}</h3>
+                                <p>${rsvp.guests} guest${rsvp.guests === '1' ? '' : 's'}</p>
+                                ${rsvp.dietary ? `<p>Dietary: ${escapeHtml(rsvp.dietary)}</p>` : ''}
+                                ${rsvp.message ? `<p>💬 "${escapeHtml(rsvp.message)}"</p>` : ''}
+                            </div>
+                            <div class="status-badge ${statusClass}">
+                                ${statusText}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                container.innerHTML = html;
+
+            } catch (error) {
+                console.error('Unexpected error loading RSVPs:', error);
+                container.innerHTML = '<div class="empty-message">No RSVPs yet. Be the first to respond!</div>';
+            }
+        }
+
+        // Helper function to escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
