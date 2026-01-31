@@ -42,13 +42,13 @@
         .card-container {
             perspective: 2000px;
             width: 100%;
-            max-width: 420px;
+            max-width: 400px;
         }
 
         .card {
             position: relative;
             width: 100%;
-            height: 580px;
+            height: 520px;
             transform-style: preserve-3d;
             transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
             cursor: pointer;
@@ -77,7 +77,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 30px 25px;
+            padding: 20px;
         }
 
         .card-front::before {
@@ -101,17 +101,17 @@
         .card-back {
             background: linear-gradient(135deg, #f5f0e8 0%, #ebe4d8 100%);
             transform: rotateY(180deg);
-            padding: 30px 25px;
+            padding: 25px 20px;
             display: flex;
             flex-direction: column;
         }
 
         .dunder-mifflin-logo {
             font-family: 'Special Elite', 'Courier New', monospace;
-            font-size: 11px;
+            font-size: 10px;
             color: #1a472a;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -119,46 +119,46 @@
         .baby-characters {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            margin: 10px 0;
             width: 100%;
         }
 
         .baby-characters img {
             max-width: 100%;
             height: auto;
-            max-height: 220px;
+            max-height: 160px;
         }
 
         .party-details {
             text-align: center;
-            margin: 20px 0;
+            margin: 12px 0;
             color: #3a3a3a;
         }
 
         .party-details h2 {
             font-family: 'Special Elite', monospace;
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 400;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #1a472a;
         }
 
         .party-details p {
-            font-size: 15px;
-            line-height: 1.8;
-            margin: 5px 0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 3px 0;
         }
 
         .rsvp-button {
             background: #5c7c3a;
             color: white;
             border: none;
-            padding: 14px 40px;
+            padding: 12px 35px;
             font-family: 'Courier Prime', monospace;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
-            margin-top: 25px;
+            margin-top: 15px;
             transition: all 0.3s ease;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -172,46 +172,46 @@
         }
 
         .click-hint {
-            font-size: 11px;
+            font-size: 10px;
             color: #888;
-            margin-top: 12px;
+            margin-top: 8px;
             font-style: italic;
         }
 
         /* Back of card styles */
         .back-header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         .back-header h2 {
             font-family: 'Special Elite', monospace;
-            font-size: 24px;
+            font-size: 22px;
             color: #1a472a;
         }
 
         .gift-note {
-            font-size: 12px;
+            font-size: 11px;
             color: #666;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .rsvp-form {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
         }
 
         .form-group label {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: #444;
             text-transform: uppercase;
@@ -221,11 +221,11 @@
         .form-group input,
         .form-group select,
         .form-group textarea {
-            padding: 10px 12px;
+            padding: 8px 10px;
             border: 2px solid #d0c4b0;
             border-radius: 4px;
             font-family: 'Courier Prime', monospace;
-            font-size: 14px;
+            font-size: 13px;
             background: #faf8f5;
             transition: border-color 0.3s ease;
         }
@@ -239,13 +239,13 @@
 
         .form-group textarea {
             resize: none;
-            height: 60px;
+            height: 50px;
         }
 
         .attendance-options {
             display: flex;
-            gap: 10px;
-            margin-top: 5px;
+            gap: 8px;
+            margin-top: 4px;
         }
 
         .attendance-option {
@@ -261,13 +261,13 @@
 
         .attendance-option label {
             display: block;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
             border: 2px solid #d0c4b0;
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 12px;
+            font-size: 11px;
             background: #faf8f5;
         }
 
@@ -281,12 +281,12 @@
             background: #5c7c3a;
             color: white;
             border: none;
-            padding: 14px;
+            padding: 12px;
             font-family: 'Courier Prime', monospace;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 8px;
             transition: all 0.3s ease;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -302,9 +302,9 @@
             border: none;
             color: #888;
             font-family: 'Courier Prime', monospace;
-            font-size: 12px;
+            font-size: 11px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 8px;
             text-decoration: underline;
         }
 
@@ -346,13 +346,23 @@
         }
 
         /* Responsive */
-        @media (max-width: 480px) {
+        @media (max-height: 600px) {
             .card {
-                height: 600px;
+                height: 480px;
             }
             
             .baby-characters img {
-                max-height: 180px;
+                max-height: 120px;
+            }
+            
+            .party-details h2 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .baby-characters img {
+                max-height: 140px;
             }
 
             .party-details h2 {
@@ -376,7 +386,7 @@
                     <h2>Alden is ONE!</h2>
                     <p><strong>Sunday, March 8, 2026</strong></p>
                     <p>1:00 PM</p>
-                    <p style="margin-top: 10px; font-size: 14px;">9214 Crosby Rd<br>Silver Spring, MD 20910</p>
+                    <p style="margin-top: 8px; font-size: 13px;">9214 Crosby Rd<br>Silver Spring, MD 20910</p>
                 </div>
 
                 <button class="rsvp-button" onclick="flipCard()">RSVP</button>
