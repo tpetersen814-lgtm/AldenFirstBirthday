@@ -48,7 +48,7 @@
         .card {
             position: relative;
             width: 100%;
-            height: 600px;
+            height: 580px;
             transform-style: preserve-3d;
             transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
             cursor: pointer;
@@ -76,7 +76,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 25px 20px;
+            justify-content: center;
+            padding: 30px 25px;
         }
 
         .card-front::before {
@@ -107,84 +108,45 @@
 
         .dunder-mifflin-logo {
             font-family: 'Special Elite', 'Courier New', monospace;
-            font-size: 10px;
+            font-size: 11px;
             color: #1a472a;
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
             letter-spacing: 1px;
             text-transform: uppercase;
-        }
-
-        .banner {
-            background: #c4a574;
-            padding: 10px 25px;
-            margin: 8px 0 15px;
-            position: relative;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
-
-        .banner::before,
-        .banner::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
-
-        .banner::before {
-            left: -12px;
-            border-width: 19px 12px 19px 0;
-            border-color: transparent #a08050 transparent transparent;
-        }
-
-        .banner::after {
-            right: -12px;
-            border-width: 19px 0 19px 12px;
-            border-color: transparent transparent transparent #a08050;
-        }
-
-        .banner h1 {
-            font-family: 'Courier Prime', monospace;
-            font-size: 14px;
-            font-weight: 400;
-            color: #2c2c2c;
-            text-align: center;
-            letter-spacing: 0.5px;
         }
 
         .baby-characters {
             display: flex;
             justify-content: center;
-            margin: 15px 0;
+            margin: 20px 0;
             width: 100%;
         }
 
         .baby-characters img {
             max-width: 100%;
             height: auto;
-            max-height: 200px;
+            max-height: 220px;
         }
 
         .party-details {
             text-align: center;
-            margin: 15px 0;
+            margin: 20px 0;
             color: #3a3a3a;
         }
 
         .party-details h2 {
             font-family: 'Special Elite', monospace;
-            font-size: 22px;
+            font-size: 26px;
             font-weight: 400;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             color: #1a472a;
         }
 
         .party-details p {
-            font-size: 14px;
-            line-height: 1.7;
-            margin: 4px 0;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 5px 0;
         }
 
         .rsvp-button {
@@ -196,7 +158,7 @@
             font-size: 15px;
             font-weight: 700;
             cursor: pointer;
-            margin-top: 18px;
+            margin-top: 25px;
             transition: all 0.3s ease;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -219,26 +181,20 @@
         /* Back of card styles */
         .back-header {
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .back-header h2 {
             font-family: 'Special Elite', monospace;
-            font-size: 20px;
+            font-size: 24px;
             color: #1a472a;
-            margin-bottom: 5px;
-        }
-
-        .back-header p {
-            font-size: 12px;
-            color: #666;
         }
 
         .gift-note {
             font-size: 12px;
             color: #666;
             text-align: center;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .rsvp-form {
@@ -392,19 +348,15 @@
         /* Responsive */
         @media (max-width: 480px) {
             .card {
-                height: 640px;
+                height: 600px;
             }
             
             .baby-characters img {
-                max-height: 170px;
-            }
-
-            .banner h1 {
-                font-size: 13px;
+                max-height: 180px;
             }
 
             .party-details h2 {
-                font-size: 20px;
+                font-size: 22px;
             }
         }
     </style>
@@ -415,10 +367,6 @@
             <!-- Front of Card -->
             <div class="card-face card-front">
                 <div class="dunder-mifflin-logo">Dunder Mifflin Scranton<br>Party Planning Committee</div>
-                
-                <div class="banner">
-                    <h1>It is your birthday.</h1>
-                </div>
 
                 <div class="baby-characters">
                     <img src="Office_Characters.png" alt="Baby Office Characters">
@@ -427,8 +375,8 @@
                 <div class="party-details">
                     <h2>Alden is ONE!</h2>
                     <p><strong>Sunday, March 8, 2026</strong></p>
-                    <p>12:00 PM</p>
-                    <p style="margin-top: 8px; font-size: 13px;">9214 Crosby Rd<br>Silver Spring, MD 20910</p>
+                    <p>1:00 PM</p>
+                    <p style="margin-top: 10px; font-size: 14px;">9214 Crosby Rd<br>Silver Spring, MD 20910</p>
                 </div>
 
                 <button class="rsvp-button" onclick="flipCard()">RSVP</button>
@@ -439,7 +387,6 @@
             <div class="card-face card-back">
                 <div class="back-header">
                     <h2>RSVP</h2>
-                    <p>Please let us know if you can make it</p>
                 </div>
 
                 <p class="gift-note">No need to bring a gift, but if you insist, Alden would appreciate your favorite kid's book (used is great!).</p>
